@@ -25,4 +25,21 @@ class DataIngestionConfig:
                         training_pipeline.DATA_INGESTION_INGESTED_DIR,
                         training_pipeline.TEST_FILE_NAME)
         
+class DataTransformationConfig:
+    def __init__(self,training_pipeline_config=TrainingPipelineConfig):
+        self.data_transformation_dir:str=os.path.join(training_pipeline_config.artifacts_dir,
+                        training_pipeline.DATA_TRANSFORAMTION_TRANSFORM_DIR)
+        self.data_transformation_train_input_ids:str=os.path.join(self.data_transformation_dir,
+                        training_pipeline.DATA_TRANSFORAMTION_TRANSFORM_DIR,
+                        training_pipeline.DATA_TRANSFORMATION_TRAIN_INPUT_ID)
+        self.data_transformation_train_attention_mask:str=os.path.join(self.data_transformation_dir,
+                        training_pipeline.DATA_TRANSFORAMTION_TRANSFORM_DIR,
+                        training_pipeline.DATA_TRANSFORMATION_TRAIN_ATTENTION_MASK)
+        self.data_transformation_test_input_ids:str=os.path.join(self.data_transformation_dir,
+                        training_pipeline.DATA_TRANSFORAMTION_TRANSFORM_DIR,
+                        training_pipeline.DATA_TRANSFORMATION_TEST_INPUT_ID)
+        self.data_transformation_test_attention_mask:str=os.path.join(self.data_transformation_dir,
+                        training_pipeline.DATA_TRANSFORAMTION_TRANSFORM_DIR,
+                        training_pipeline.DATA_TRANSFORMATION_TEST_ATTENTION_MASK)
+        
         
